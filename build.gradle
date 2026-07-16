@@ -1,0 +1,85 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.5.7'
+    id 'io.spring.dependency-management' version '1.1.7'
+    id 'org.openapi.generator' version '7.6.0'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs += "$buildDir/generated/src/main/java"
+        }
+    }
+}
+
+openApiGenerate {
+    generatorName.set("spring")
+    inputSpec.set("$rootDir/src/main/resources/openapi.yaml")
+    outputDir.set("$buildDir/generated")
+    apiPackage.set("com.kotojava.users.api")
+    modelPackage.set("com.kotojava.users.model")
+    configOptions.set([
+            interfaceOnly: "true",
+            useSpringBoot3: "true",
+            useTags: "true",
+            skipDefaultInterface: "false"
+    ])
+}
+
+group = 'com.kotojava'
+version = '0.0.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+dependencies {
+
+    implementation 'net.datafaker:datafaker:2.4.2'
+
+    implementation platform('software.amazon.awssdk:bom:2.25.60')
+    implementation 'software.amazon.awssdk:s3'
+
+    implementation 'org.apache.pdfbox:pdfbox:3.0.3'
+    implementation 'com.google.guava:guava:33.0.0-jre'
+
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'org.springframework.boot:spring-boot-starter-amqp'
+    testImplementation 'org.awaitility:awaitility:4.2.2'
+//    testImplementation 'org.wiremock:wiremock-standalone:3.3.1'
+    testImplementation("com.squareup.okhttp3:mockwebserver:4.12.0")
+
+    implementation 'org.openapitools:jackson-databind-nullable:0.2.6'
+    implementation 'jakarta.annotation:jakarta.annotation-api:2.1.1'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    implementation 'org.postgresql:postgresql:42.7.8'
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.5.0'
+
+    compileOnly("org.projectlombok:lombok:1.18.42")
+    annotationProcessor("org.projectlombok:lombok:1.18.42")
+    implementation 'org.springframework.boot:spring-boot-starter'
+
+    testImplementation 'org.testcontainers:testcontainers-junit-jupiter:2.0.4'
+
+    testImplementation 'org.testcontainers:testcontainers:1.20.3'
+
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
+}
+test {
+    useJUnitPlatform()
+}

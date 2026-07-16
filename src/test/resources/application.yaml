@@ -1,0 +1,24 @@
+server:
+  port: 8080
+s3:
+  endpoint: http://localhost:9696
+  access-key: admin
+  secret-key: supersecretpassword123
+  bucket: my-binaries
+  region: us-east-1
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:6464/mydb
+    username: myuser
+    password: somepasswordjava2026spring
+    driver-class-name: org.postgresql.Driver
+  rabbitmq:
+    host: localhost
+    port: 5782
+    username: admin
+    password: admin
+
+llm:
+  baseurl: http://localhost:6666
+email:
+  baseUrl: http://localhost:6667
