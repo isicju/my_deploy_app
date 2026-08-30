@@ -6,16 +6,16 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest(
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT
 )
-public class SlowTests1 {
+public class E2E {
 
     @Test
     public void quickTest1() throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(2000);
     }
 
     @Test
     public void quickTest2() throws InterruptedException {
-        Thread.sleep(5000);
+        Thread.sleep(2000);
     }
 
     @Test

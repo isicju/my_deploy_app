@@ -10,7 +10,7 @@ public class IntegrationTests {
 
     @Test
     public void quickTest1() throws InterruptedException {
-        Thread.sleep(10000);
+        Thread.sleep(1000);
     }
 
 
