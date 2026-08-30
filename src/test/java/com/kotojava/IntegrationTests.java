@@ -12,6 +12,20 @@ public class IntegrationTests {
     public void quickTest1() throws InterruptedException {
         Thread.sleep(1000);
     }
-
-
+    @Test
+    public void quickTest2() throws InterruptedException {
+        Thread.sleep(1000);
+    }
+    @Test
+    public void quickTest3() throws InterruptedException {
+        Thread.sleep(1000);
+    }
+    @Test
+    public void quickTest4() throws InterruptedException {
+        Thread.sleep(1000);
+    }
+    @Test
+    public void quickTest5() throws InterruptedException {
+        Thread.sleep(1000);
+    }
 }

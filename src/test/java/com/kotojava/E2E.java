@@ -18,9 +18,4 @@ public class E2E {
         Thread.sleep(2000);
     }
 
-    @Test
-    public void quickTest3() throws InterruptedException {
-        Thread.sleep(5000);
-    }
-
 }
