@@ -10,6 +10,7 @@ public class IntegrationTests {
 
     @Test
     public void quickTest1() throws InterruptedException {
+        System.out.println("printing Integration test 1");
         Thread.sleep(1000);
     }
     @Test

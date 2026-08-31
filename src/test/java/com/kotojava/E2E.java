@@ -10,6 +10,7 @@ public class E2E {
 
     @Test
     public void quickTest1() throws InterruptedException {
+        System.out.println("printing E2E test 1");
         Thread.sleep(2000);
     }
 
