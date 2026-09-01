@@ -13,6 +13,9 @@ public class UnitTests {
 
     @Test
     public void quickTest2() throws InterruptedException {
+        if(true){
+            throw new RuntimeException("Something went wrong!");
+        }
         Thread.sleep(100);
     }
 
